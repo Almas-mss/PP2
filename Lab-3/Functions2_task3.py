@@ -1,4 +1,4 @@
-import json
+import json_exer
 def connection():
     with open("data.json", "r") as file:
         movies = json.load(file)
