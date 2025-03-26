@@ -2,10 +2,12 @@ import pygame
 import datetime
 
 pygame.init()
+
 isDone = True
 white = (255, 255, 255)
 screen = pygame.display.set_mode((450, 400))
 screen.fill(white)
+
 clock = pygame.image.load("images/mickeyWithoutArms.png")
 leftArmIMAGE = pygame.image.load("images/leftarm.png")
 rightArmIMAGE = pygame.image.load("images/rightarm.png")
