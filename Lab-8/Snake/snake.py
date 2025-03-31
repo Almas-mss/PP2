@@ -14,10 +14,10 @@ blue = (0, 0, 255)
 green = (0, 255, 0)
 bg = (138, 140, 168)
 
-snake_block = 10  # жыланның және тамақтың 1 клеткасының размеры
+snake_block = 10
 snake_speed = 15
 
-clock = pygame.time.Clock()  # ойынның жылдамдығын басқару
+clock = pygame.time.Clock()
 
 score_style = pygame.font.SysFont("arial", 30)
 message_style = pygame.font.SysFont("arial", 20)
@@ -25,7 +25,7 @@ message_style = pygame.font.SysFont("arial", 20)
 
 def total_score(score):
     score_value = score_style.render("Your score: " + str(score), True, blue)
-    screen.blit(score_value, [0, 0])  # сол жақ төбеге ұпайды шығарамыз
+    screen.blit(score_value, [0, 0])
 
 
 def total_level(level):
@@ -47,11 +47,9 @@ def playAgain():
     game_over = False
     game_close = False
 
-    # жыланның бастапқы позициясы
     x1 = width / 2
     y1 = height / 2
 
-    # жыланның бағытын ауыстыру
     x1_change = 0
     y1_change = 0
 
@@ -79,7 +77,7 @@ def playAgain():
                         playAgain()
                     if event.key == pygame.K_q:
                         game_over = True
-                        game_over = False
+                        game_close = False
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -110,10 +108,10 @@ def playAgain():
         snake_head.append(y1)
         snake_list.append(snake_head)
 
-        if len(snake_list) > length_of_snake:  # егер жылан тамак жемесе
+        if len(snake_list) > length_of_snake:
             del snake_list[0]
 
-        for x in snake_list[:-1]:  # жыланның денесіне соғылса
+        for x in snake_list[:-1]:
             if x == snake_head:
                 game_close = True
 
@@ -136,4 +134,4 @@ def playAgain():
     pygame.quit()
     quit()
 
-playAgain() # start game
+playAgain()
