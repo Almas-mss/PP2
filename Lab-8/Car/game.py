@@ -26,6 +26,7 @@ backgroundImage = pygame.image.load("images/street.png")
 bigFont = pygame.font.SysFont("Arial", 50)
 smallFont = pygame.font.SysFont("Arial", 20)
 gameOverText = bigFont.render("GAME OVER!!!", True, red)
+
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -79,6 +80,7 @@ class Coin(pygame.sprite.Sprite):
             enemyCounter += 1
             self.rect.bottom = 0
             self.rect.center = (random.randint(45, windowWidth - 45), 0)
+
 player = Player()
 enemy = Enemy()
 coin = Coin()
