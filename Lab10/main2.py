@@ -1,5 +1,5 @@
 import csv
-from Lab10.db.PhoneBook import PhoneBook
+from Lab10.db.Phonebook import PhoneBook
 from Lab10.db.dbConnector import DBConnector
 
 db = DBConnector()
