@@ -25,7 +25,7 @@ font = pygame.font.SysFont('Verdana', 60)
 font_small = pygame.font.SysFont('Verdana', 20)
 game_over = font.render('Game Over', True, black)
 
-backround = pygame.image.load("../Lab8/Car/images/street.png")
+backround = pygame.image.load("../Lab-8/Car/images/street.png")
 
 pygame.display.set_caption('Game')
 
@@ -33,7 +33,7 @@ pygame.display.set_caption('Game')
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('../Lab8/Car/images/enemy.png')
+        self.image = pygame.image.load('../Lab-8/Car/images/enemy.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, w - 40), 0)
 
@@ -49,7 +49,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('../Lab8/Car/images/player.png')
+        self.image = pygame.image.load('../Lab-8/Car/images/player.png')
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -73,7 +73,7 @@ class Player(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
     def __init__(self, size1, size2):
         super().__init__()
-        self.image = pygame.transform.scale(pygame.image.load('../Lab8/Car/images/coin.jpeg'), (size1, size2))
+        self.image = pygame.transform.scale(pygame.image.load('../Lab-8/Car/images/coin.jpeg'), (size1, size2))
         self.image.set_colorkey(white)
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, w - 40), 0)
@@ -175,7 +175,7 @@ while True:
     if pygame.sprite.spritecollideany(P1, coins):
         coin1 += 1
         coinnum += 1
-        pygame.mixer.Sound('../Lab8/Car/sounds/coinsound.mp3').play()
+        pygame.mixer.Sound('../Lab-8/Car/sounds/coinsound.mp3').play()
         C1.rect.center = (random.randint(40, w - 40), 0)
         if coinnum % 4 == 0 and coinnum != 0:
             speed += 0.2
@@ -185,7 +185,7 @@ while True:
         object.move()
 
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('../Lab8/Car/sounds/crash.wav').play()
+        pygame.mixer.Sound('../Lab-8/Car/sounds/crash.wav').play()
         time.sleep(0.5)
         screen.fill(red)
         screen.blit(game_over, (30, 250))
